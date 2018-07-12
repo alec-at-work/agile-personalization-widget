@@ -416,6 +416,7 @@ $('[data-abm-demo]').on('click', function(e){
             })
             // console.log(err);
             // alert(err.message);
+            return;
         }
         
     }
