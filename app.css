@@ -1,10 +1,14 @@
 @font-face {
     font-family: "Artifakt-main";
-    src: url(../Artifakt-Element-Medium.ttf) format("truetype");
+    src: url(/agile-personalization-widget/Artifakt-Element-Medium.ttf) format("truetype");
 }
 @font-face {
     font-family: "Artifakt-heavy";
-    src: url(../Artifakt-Element-Heavy.ttf) format("truetype");
+    src: url(/agile-personalization-widget/Artifakt-Element-Heavy.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Artifakt-light";
+    src: url(/agile-personalization-widget/Artifakt-Element-Light.ttf) format("truetype");
 }
 body {
     font-family: "Artifakt-main";
@@ -12,7 +16,7 @@ body {
     font-size: 24px;
     margin-left: 10px;
     text-align: center;
-    background-image: url(../imgs/demo-bg.jpg);
+    background-image: url(/agile-personalization-widget/imgs/demo-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -26,7 +30,7 @@ code {
 }
 
 #logo-holder * {
-    font-family: "Artifakt-heavy";
+    font-family: "Artifakt-light";
     vertical-align: middle;
 }
 #logo-holder b {

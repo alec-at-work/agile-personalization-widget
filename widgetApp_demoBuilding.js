@@ -249,16 +249,16 @@ function getBannerImg(palette) {
 	// console.log('getting palette for : ' + paletteNum);
 	switch (paletteNum) {
 		case 'one' :
-			return '../imgs/brand_banner_1.jpg';
+			return '/agile-personalization-widget/imgs/brand_banner_1.jpg';
 			break;
 		case 'two' :
-			return '../imgs/brand_banner_2.jpg';
+			return '/agile-personalization-widget/imgs/brand_banner_2.jpg';
 			break;
 		case 'three' :
-			return '../imgs/brand_banner_3.jpg';
+			return '/agile-personalization-widget/imgs/brand_banner_3.jpg';
 			break;
 		case 'four' :
-			return '../imgs/brand_banner_4.jpg';
+			return '/agile-personalization-widget/imgs/brand_banner_4.jpg';
 			break;
 		default :
 			return false;
