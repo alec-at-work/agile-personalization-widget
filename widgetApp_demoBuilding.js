@@ -378,7 +378,7 @@ window.adskWafPersonalizeMsg = function(userVar, userSegment, config) {
 		// track errors
 		gtag('event', 'Invalid Config Used', {
           'event_category': 'Errors',
-          'event_label' : JSON.stringify(config);
+          'event_label' : JSON.stringify(config)
         }); 
 	}
 };
