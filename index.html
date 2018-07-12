@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Autodesk WAF - Agile Personalization Widget</title>
+
+	<link rel="stylesheet" type="text/css" href="/app.css"></link>
+	<link rel="stylesheet" type="text/css" href="/widget.css"></link>
+
+    <script type="text/javascript" src="/jquery.js"></script>
+
+</head>
+<body>
+<h3>
+	<div id="logo-holder">
+		<img id="demo-logo" src="/imgs/icon.png">
+		<b> Agile Personalization Widget</b>
+		<br />
+		<i>version ALPHA</i>
+	</div>
+</h3>
+<div id="menu">
+	<div class="menu-link active-section" data-app-section="abm-demo-info">Info</div>
+	<div class="menu-link" data-app-section="abm-demo-examples">Examples</div>
+	<div class="menu-link" data-app-section="abm-demo-palettes">Palettes</div>
+	<div class="menu-link" data-app-section="abm-demo-custom">Custom</div>
+</div>
+
+<div id="abm-demo-info" class="app-section">
+	<div class="demo-info-holder">
+		<p>
+			Welcome to the Autodesk <b>WAF Personalization Widget</b> Configuration Wizard. This page is intended to help you quickly develop new personalization <code>configurations</code>. If you have any questions, please reach out via email.
+		</p>
+	</div>
+</div>
+<div id="abm-demo-palettes" class="app-section hidden">
+	<div class="demo-info-holder">
+		<p>Scroll through the palette options below, and use the <code>key</code> above for experimenting with your <code>configurations</code></p>
+	</div>
+	<div class="palettes-holder">
+		
+		<div class="palette-section">
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-blue</code></p>
+				<img class="palette-img" src="/palette_imgs/blue.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-dark-blue</code></p>
+				<img class="palette-img" src="/palette_imgs/darkblue.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-teal</code></p>
+				<img class="palette-img" src="/palette_imgs/teal.png">
+			</div>
+		</div>
+		<div class="palette-section">
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-red</code></p>
+				<img class="palette-img" src="/palette_imgs/red.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-orange</code></p>
+				<img class="palette-img" src="/palette_imgs/orange.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-green</code></p>
+				<img class="palette-img" src="/palette_imgs/green.png">
+			</div>
+		</div>
+		<div class="palette-section">
+			<div class="palette-example">
+				<p><code>waf-pers-generic-palette-grey</code></p>
+				<img class="palette-img" src="/palette_imgs/grey.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-message-palette-one</code></p>
+				<img class="palette-img" src="/palette_imgs/banner-1.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-message-palette-two</code></p>
+				<img class="palette-img" src="/palette_imgs/banner-2.png">
+			</div>
+		</div>
+		<div class="palette-section">
+			<div class="palette-example">
+				<p><code>waf-pers-message-palette-three</code></p>
+				<img class="palette-img" src="/palette_imgs/banner-3.png">
+			</div>
+			<div class="palette-example">
+				<p><code>waf-pers-message-palette-four</code></p>
+				<img class="palette-img" src="/palette_imgs/banner-4.png">
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div id="abm-demo-custom" class="app-section demo-section hidden">
+	<div class="abm-demo-ui">
+		<div class="custom-json-demo">
+			<div class="demo-info-holder">
+				<p>Configure the <code>JSON</code> below. If using <code>personalize</code>, you can optionally specify a <b>Marketing Alias</b>, to test the messaging. When ready, hit the Generate button.</p>
+			</div>
+			<textarea id="custom-json-input" name="custom-config"></textarea>
+			<br />
+			<div class="custom-alias">
+				<input id="custom-alias-input" type="text" name="dyn-marketing-alias"
+					placeholder="enter a Marketing Alias">
+			</div>
+			<button data-abm-demo="custom">Generate</button>
+			<button data-abm-demo="copy">Copy Current Config</button>
+			<div id="custom-error" class="hidden">
+			</div>
+		</div>
+
+	</div>
+	<div class="abm-demo-info">
+		<div class="demo-guide">
+			<p>
+				<u>Configuration</u>
+				<br />
+				<br />
+				In the <code>style</code> object, specify the desired <code>palette</code> using one of the available <code>keys</code> in <b>Palettes</b>. Aditionally, specify the desired <code>width</code> for the widget.
+				<br />
+				<br />
+				Any and all sections are option. Simply delete an entire <code>property</code> and it's <code>object</code> to remove it from the configuration. 
+				<br />
+				<br />
+				Enter any desired (and default) message text into the <code>text property</code> value. If you'd like to make that text hyperlinked, specify the full destination URL in the <code>link property</code> value; otherwise, leave that value as <code>false</code>.
+				<br />
+				<br />
+				Specific <code>closeText</code> can be applied. To use the default of <b>"Close"</b>, simply remove that property.
+				<br />
+				<br />
+
+				<u>Personalization</u>
+				<br />
+				<br />
+				Set the <code>personalization</code> property to <code>true</code> to enable. 
+				<br />
+				<br />
+				In the <code>personalizations object</code>, specificy the <i>config section</i> and the alternate text to use. Make sure to include <code>##marketingAlias##</code> in the syntax, for Company Name to dynamically be inserted. If no valid <code>Marketing Alias</code> is found, the default text in for the section is used.
+				<br />
+				<br />
+			</p>
+		</div>
+	</div>
+</div>
+<div id="abm-demo-examples" class="app-section hidden">
+	<div class="demo-info-holder">
+		<p>Use the buttons below to see widget examples</p>
+	</div>
+	<div class="demo-buttons">
+		<button data-abm-demo="special-offer">Special Offer</button>
+		<button data-abm-demo="maintenance-to-subscription">Maintenance to Subscription</button>
+		<button data-abm-demo="test-fomt-bim-construction-en">BIM in English</button>
+	</div>
+	<div class="demo-buttons">
+		<button data-abm-demo="test-fomt-bim-construction-jp">BIM in Japanese</button>
+		<button data-abm-demo="maintenance-to-subscription">Maintenance to Subscription</button>
+		<button data-abm-demo="subscription-benefits">Subscription Benefits</button>
+	</div>
+	<div class="demo-buttons">
+		<button data-abm-demo="industry-collection-m_and_e">M&E Colletion</button>
+		<button data-abm-demo="industry-collection-pd_and_m">PD&M Collection</button>
+		<button data-abm-demo="industry-collection-aec">AEC Collection</button>
+	</div>
+</div>
+
+
+<br />
+<br />
+
+<script type="text/javascript" src="/app.js"></script>
+<script type="text/javascript" src="/configs_for_demo.js"></script>
+
+<script type="text/javascript" src="/widgetApp_demoBuilding.js"></script>
+
+</body>
+</html>
