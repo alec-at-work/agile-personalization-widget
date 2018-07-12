@@ -249,16 +249,16 @@ function getBannerImg(palette) {
 	// console.log('getting palette for : ' + paletteNum);
 	switch (paletteNum) {
 		case 'one' :
-			return '/brand_banner_1.jpg';
+			return '../imgs/brand_banner_1.jpg';
 			break;
 		case 'two' :
-			return '/brand_banner_2.jpg';
+			return '../imgs/brand_banner_2.jpg';
 			break;
 		case 'three' :
-			return '/brand_banner_3.jpg';
+			return '../imgs/brand_banner_3.jpg';
 			break;
 		case 'four' :
-			return '/brand_banner_4.jpg';
+			return '../imgs/brand_banner_4.jpg';
 			break;
 		default :
 			return false;
