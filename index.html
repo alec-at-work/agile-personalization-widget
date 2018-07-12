@@ -26,7 +26,7 @@
 <h3>
 	<div id="logo-holder">
 		<img id="demo-logo" src="/agile-personalization-widget/imgs/icon.png">
-		<b> Agile Personalization Widget</b>
+		<b>&nbsp;&nbsp;Agile Personalization Widget</b>
 		<br />
 		<i>version ALPHA</i>
 	</div>
@@ -35,7 +35,7 @@
 	<div class="menu-link active-section" data-app-section="abm-demo-info">Info</div>
 	<div class="menu-link" data-app-section="abm-demo-examples">Examples</div>
 	<div class="menu-link" data-app-section="abm-demo-palettes">Palettes</div>
-	<div class="menu-link" data-app-section="abm-demo-custom">Custom</div>
+	<div class="menu-link" data-app-section="abm-demo-custom">Build your own</div>
 </div>
 
 <div id="abm-demo-info" class="app-section">
@@ -46,13 +46,16 @@
 			<b>Agile Personalization Widget</b> Configuration Wizard. 
 			<br/>
 			<br/>
-			This page is intended to help you quickly develop new personalization <code>configurations</code>. If you have any questions, please reach out via <a href="mailto:alec.rothman@autodesk.com?subject=Agile%20Widget%20Demo">email</a>.
+			This page is intended to help you quickly develop new personalization <code>configurations</code> for this "messaging" widget that can be deployed on any site leveraging the enterprise Tag Management System (<code>Tealium</code>) and the <code>Web Analytics Foundation</code>. 
+			<br/>
+			<br/>
+			Reach out via <a href="mailto:alec.rothman@autodesk.com?subject=Agile%20Widget%20Demo">email</a> if you have any questions.
 		</p>
 	</div>
 </div>
 <div id="abm-demo-palettes" class="app-section hidden">
 	<div class="demo-info-holder">
-		<p>Scroll through the palette options below, and use the <code>key</code> above for experimenting with your <code>configurations</code></p>
+		<p>Scroll through the palette options below, and use the <code>key</code> above when building your own <code>configurations</code></p>
 	</div>
 	<div class="palettes-holder">
 		
@@ -140,23 +143,25 @@
 				In the <code>style</code> object, specify the desired <code>palette</code> using one of the available <code>keys</code> in <b>Palettes</b>. Aditionally, specify the desired <code>width</code> for the widget.
 				<br />
 				<br />
-				Any and all sections are option. Simply delete an entire <code>property</code> and it's <code>object</code> to remove it from the configuration. 
+				Any and all sections are optional. Simply delete an entire property and it's <code>object</code> to remove it from the widget. 
 				<br />
 				<br />
-				Enter any desired (and default) message text into the <code>text property</code> value. If you'd like to make that text hyperlinked, specify the full destination URL in the <code>link property</code> value; otherwise, leave that value as <code>false</code>.
+				<u>Text & Links</u>
+				<br />
+				<br />
+				Enter any desired (and default) message text into the <code>text property</code> values. To hyperlink text, specify the full destination URL in the corresponding <code>link property</code> value; otherwise, leave that value as <code>false</code>.
 				<br />
 				<br />
 				Specific <code>closeText</code> can be applied. To use the default of <b>"Close"</b>, simply remove that property.
 				<br />
 				<br />
-
 				<u>Personalization</u>
 				<br />
 				<br />
-				Set the <code>personalization</code> property to <code>true</code> to enable. 
+				To enable <b>personalization</b>, set the <code>personalization</code> property to <code>true</code>. 
 				<br />
 				<br />
-				In the <code>personalizations object</code>, specificy the <i>config section</i> and the alternate text to use. Make sure to include <code>##marketingAlias##</code> in the syntax, for Company Name to dynamically be inserted. If no valid <code>Marketing Alias</code> is found, the default text in for the section is used.
+				In the <code>personalizations object</code>, specificy the <i>config section</i> and the alternate text to use. Make sure to include <code>##marketingAlias##</code> in the syntax, for Company Name to dynamically be inserted. If no valid <code>Marketing Alias</code> is found, the default text for that section is used.
 				<br />
 				<br />
 			</p>
