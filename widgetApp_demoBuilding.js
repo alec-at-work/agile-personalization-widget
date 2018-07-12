@@ -365,10 +365,20 @@ window.adskWafPersonalizeMsg = function(userVar, userSegment, config) {
 			enableFunctionality(config);
 			loadPep($);
 		} catch(err) {
-			console.warn("WAF Personalization Build ERROR: " + err.message);	
+			console.warn("WAF Personalization Widget Build ERROR: " + err.message);	
+			// track errors
+			gtag('event', 'Widget Build Error', {
+              'event_category': 'Errors',
+              'event_label' : err.message
+            }); 
 		}
 		
 	} else {
 		console.warn("WAF Personalization CONFIG Missing, will not build messaging");
+		// track errors
+		gtag('event', 'Invalid Config Used', {
+          'event_category': 'Errors',
+          'event_label' : JSON.stringify(config);
+        }); 
 	}
 };

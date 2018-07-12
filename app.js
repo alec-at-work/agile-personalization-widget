@@ -369,12 +369,19 @@ $('.menu-link').on('click', function(e){
 $('[data-abm-demo]').on('click', function(e){
 
     var demoConfig = $(this).attr('data-abm-demo'),
-        customs = false;
+        customs = false,
+        valid = true;
     if (demoConfig === "copy") {
         var copyText = document.getElementById("custom-json-input");
         copyText.select();
         document.execCommand("copy");
         alert("Copied the config: " + copyText.value);
+
+        // Google Tagging...
+        gtag('event', 'Copy Custom Config', {
+          'event_category': 'Message Development'
+        });
+
         return;
     }
     if (demoConfig === "custom") {
@@ -384,11 +391,23 @@ $('[data-abm-demo]').on('click', function(e){
             });
         }
         try {
-            customs = JSON.parse($('#custom-json-input').val());    
+            customs = JSON.parse($('#custom-json-input').val());  
+            // Google Tagging...
+            gtag('event', 'Valid config', {
+              'event_category': 'Message Development'
+            });  
         } catch(err) {
+            valid = false;
             $("#custom-error").html(err.message);
             $("#custom-error").fadeIn(function(){
                 $(this).removeClass('hidden');
+                
+                // Google Tagging...
+                gtag('event', 'Invalid config', {
+                  'event_category': 'Message Development',
+                  'event_label' : err.message
+                });  
+
                 $(this).on('click', function(e){
                     $(this).fadeOut(function(){
                         $(this).addClass('hidden');
@@ -414,6 +433,21 @@ $('[data-abm-demo]').on('click', function(e){
         window.adskWafPersonalizeMsg(demoConfig, 'demo', customs);
     }
 
+    // track it 
+    if (valid) {
+        if (demoConfig === "custom") {
+            // Google Tagging...
+            gtag('event', 'Custom Config Shown', {
+              'event_category': 'Message Development'
+            });  
+        } else {
+            gtag('event', 'Demo Config Shown', {
+              'event_category': 'Widget Examples',
+              'event_label' : demoConfig
+            });  
+        }
+    }
+    
 });
 
 function userEneteredAlias() {
