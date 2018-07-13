@@ -407,6 +407,11 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
             });  
         } catch(err) {
             valid = false;
+
+            $('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
+                $('#waf-pers-bubble-holder').remove();
+            //  setCookie('adsk_abm_click','y',null);
+            });
             $("#custom-error").html(err.message);
             $("#custom-error").fadeTo(500, 1.0, function(){
                 $("#custom-error").removeClass('hidden');
