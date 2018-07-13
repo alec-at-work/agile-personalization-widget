@@ -408,10 +408,14 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
         } catch(err) {
             valid = false;
 
-            $('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
+            if (isMobile) {
                 $('#waf-pers-bubble-holder').remove();
-            //  setCookie('adsk_abm_click','y',null);
-            });
+            } else {
+                $('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
+                    $('#waf-pers-bubble-holder').remove();
+                //  setCookie('adsk_abm_click','y',null);
+                });
+            }
 
             $("#custom-error").html(err.message);
             $("#custom-error").animate({opacity: 'show'}, function(){
@@ -432,12 +436,19 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
     }
     // remove one if there
     if ($('#waf-pers-bubble-holder').length > 0) {
-        $('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
+        if (isMobile) {
             $('#waf-pers-bubble-holder').remove();
-
             userEneteredAlias();
             window.adskWafPersonalizeMsg(demoConfig, 'demo', customs);
-        });    
+        } 
+        else {
+            $('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
+                $('#waf-pers-bubble-holder').remove();
+
+                userEneteredAlias();
+                window.adskWafPersonalizeMsg(demoConfig, 'demo', customs);
+            });    
+        }
     }
     else {
         userEneteredAlias();

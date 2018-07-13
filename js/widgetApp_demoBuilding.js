@@ -14,10 +14,14 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 var handleDeviceClick = isMobile ? 'touchend' : 'click';
 
 $(document).on(handleDeviceClick, '.waf-pers-bubble-close-button', function(e){
-	$('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
+	if (isMobile) {
 		$('#waf-pers-bubble-holder').remove();
-	//	setCookie('adsk_abm_click','y',null);
-	});
+	} else {
+		$('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
+			$('#waf-pers-bubble-holder').remove();
+		//	setCookie('adsk_abm_click','y',null);
+		});	
+	}
 });
 
 $(document).on(handleDeviceClick, '[data-abm-link]', function(e){
