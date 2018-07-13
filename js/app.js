@@ -1,4 +1,4 @@
-
+(function($){   
 
 window.utag = window.utag || {};
 utag.globals = utag.globals || {};
@@ -395,7 +395,7 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
     }
     if (demoConfig === "custom") {
         if (!$("#custom-error").hasClass('hidden')) {
-            $("#custom-error").fadeTo(500, 0, function(){
+            $("#custom-error").animate({opacity: 0}, function(){
                 $("#custom-error").addClass('hidden');
             });
         }
@@ -408,12 +408,13 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
         } catch(err) {
             valid = false;
 
-            $('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
+            $('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
                 $('#waf-pers-bubble-holder').remove();
             //  setCookie('adsk_abm_click','y',null);
             });
+
             $("#custom-error").html(err.message);
-            $("#custom-error").fadeTo(500, 1.0, function(){
+            $("#custom-error").animate({opacity: 'show'}, function(){
                 $("#custom-error").removeClass('hidden');
                 
                 // Google Tagging...
@@ -431,7 +432,7 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
     }
     // remove one if there
     if ($('#waf-pers-bubble-holder').length > 0) {
-        $('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
+        $('#waf-pers-bubble-holder').animate({opacity: 0}, function(){
             $('#waf-pers-bubble-holder').remove();
 
             userEneteredAlias();
@@ -460,9 +461,9 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
     
 });
 
-// error message showing
+// error message for custom
 $(document).on(handleDeviceClick, "#custom-error", function(e){
-    $("#custom-error").fadeTo(500, 0, function(){
+    $("#custom-error").animate({opacity: 0}, function(){
         $("#custom-error").addClass('hidden');
     });
 });
@@ -477,10 +478,10 @@ function userEneteredAlias() {
 };
 
 function replacer(key, value) {
-    console.log(key);
+    // console.log(key);
     // return key.replace(/"/g, '');
     var newKey = key.replace(/"/g, ''); 
-    console.log(newKey);
+    // console.log(newKey);
     return (newKey, value);
 };
 
@@ -526,3 +527,22 @@ function showLoc() {
     bubEl = $("#waf-pers-bubble-holder");
     console.info(bubEl.position());
 }
+
+// WAFER contextual links...
+$(document).on('ready', function(e){
+    setTimeout(function(){
+        if (typeof window.$wafer !== "undefined") {
+            $('#wafer-demo-examples').removeClass('hidden');
+        }
+    }, 500);
+});
+
+// click for the WAFER link
+$(document).on(handleDeviceClick, '#wafer-settings-link', function(e){
+    // local
+    // window.open('chrome-extension://ffghmaniegcbhebmfpkdppncjlfbhimj/toolSettings.html','_blank');
+    // real WAFER
+    window.open('chrome-extension://fppndbbblfgfbdeinbbohcmhidafbgco/toolSettings.html','_blank');
+});
+
+})(window.$widget);
