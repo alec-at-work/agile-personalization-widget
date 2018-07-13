@@ -548,6 +548,15 @@ $(document).on('ready', function(e){
     }, 500);
 });
 
+// track WAFER example clicks
+$(document).on(handleDeviceClick, '#wafer-demo-examples a', function(e){
+    var link = $(e.target).html();
+    gtag('event', 'Demo Config Shown', {
+      'event_category': 'WAFER In-Page Examples',
+      'event_label' : link
+    }); 
+});
+
 // click for the WAFER link
 $(document).on(handleDeviceClick, '#wafer-settings-link', function(e){
     // local
