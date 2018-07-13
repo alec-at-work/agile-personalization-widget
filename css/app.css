@@ -257,7 +257,9 @@ input {
     #custom-alias-input {
         padding: 0.3vw;
         width: 50%;
-        font-family: Consolas;
+        font-family: Consolas, monaco, monospace;
+        font-style: normal;
+        font-variant: normal;
         color: #5BC9BD;
         border: 2px solid #4D4D4D;
         box-shadow: 4px 4px 4px #999999;
@@ -268,7 +270,9 @@ input {
 
     #custom-json-input {
         padding: 8px;
-        font-family: Consolas;
+        font-family: Consolas, monaco, monospace;
+        font-style: normal;
+        font-variant: normal;
         width: 98%;
         font-size: 90%;
         height: 30vw;
