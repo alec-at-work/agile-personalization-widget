@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: "Artifakt";
-    src: url(/agile-personalization-widget/fonts/Artifakt-Element-Medium.ttf) format("truetype");
+    src: url(http://localhost/widget-demo/fonts/Artifakt-Element-Medium.ttf) format("truetype");
 }
 
 
@@ -29,6 +29,7 @@
 
 #waf-pers-bubble-holder {
 	z-index : 888888;
+	position : fixed;
 	bottom : -3%;
 	right : 3%; 
 	width: 1px;
