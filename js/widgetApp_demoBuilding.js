@@ -12,24 +12,21 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 }
 var handleDeviceClick = isMobile ? 'touchend' : 'click';
 
+// click handling for the widget
+$(document).on(handleDeviceClick, '.waf-pers-bubble-close-button', function(e){
+	$('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
+		$('#waf-pers-bubble-holder').remove();
+	//	setCookie('adsk_abm_click','y',null);
+	});
+});
+
+$(document).on(handleDeviceClick, '[data-abm-link]', function(e){
+	let url = $(e.target).attr('data-abm-link');
+	window.open(url,'_blank');
+});
+
 // pop-over functionality
 function enableFunctionality(config){
-	$('.waf-pers-bubble-close-button').on(handleDeviceClick, function(e){
-		$('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
-			$('#waf-pers-bubble-holder').remove();
-		//	setCookie('adsk_abm_click','y',null);
-		});
-	});
-
-	$('[data-abm-link]').on(handleDeviceClick, function(e){
-		let url = $(this).attr('data-abm-link');
-		window.open(url,'_blank');
-	});
-
-	// the contact buttons
-	$('.waf-pers-contact-block').on(handleDeviceClick, function(e){
-		// setCookie('adsk_abm_click','y',null);
-	});
 	
 	var bubHeight = $('#waf-pers-bubble-holder').height(),
 		bubInnerHeight = $('.waf-pers-bubble').height();

@@ -408,8 +408,8 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
         } catch(err) {
             valid = false;
             $("#custom-error").html(err.message);
-            $("#custom-error").fadeIn(function(){
-                $(this).removeClass('hidden');
+            $("#custom-error").fadeTo(500, 1.0, function(){
+                $("#custom-error").removeClass('hidden');
                 
                 // Google Tagging...
                 gtag('event', 'Invalid config', {
@@ -417,11 +417,6 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
                   'event_label' : err.message
                 });  
 
-                $(this).on(handleDeviceClick, function(e){
-                    $(this).fadeTo(500, 0, function(){
-                        $(this).addClass('hidden');
-                    });
-                });
             })
             // console.log(err);
             // alert(err.message);
@@ -458,6 +453,13 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
         }
     }
     
+});
+
+// error message showing
+$(document).on(handleDeviceClick, "#custom-error", function(e){
+    $("#custom-error").fadeTo(500, 0, function(){
+        $("#custom-error").addClass('hidden');
+    });
 });
 
 function userEneteredAlias() {
