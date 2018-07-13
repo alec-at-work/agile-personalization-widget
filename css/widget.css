@@ -29,7 +29,6 @@
 
 #waf-pers-bubble-holder {
 	z-index : 888888;
-	position : fixed;
 	bottom : -3%;
 	right : 3%; 
 	width: 1px;
