@@ -395,7 +395,7 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
     }
     if (demoConfig === "custom") {
         if (!$("#custom-error").hasClass('hidden')) {
-            $("#custom-error").fadeOut(function(){
+            $("#custom-error").fadeTo(500, 0, function(){
                 $("#custom-error").addClass('hidden');
             });
         }
@@ -418,7 +418,7 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
                 });  
 
                 $(this).on(handleDeviceClick, function(e){
-                    $(this).fadeOut(function(){
+                    $(this).fadeTo(500, 0, function(){
                         $(this).addClass('hidden');
                     });
                 });
@@ -431,7 +431,7 @@ $('[data-abm-demo]').on(handleDeviceClick, function(e){
     }
     // remove one if there
     if ($('#waf-pers-bubble-holder').length > 0) {
-        $('#waf-pers-bubble-holder').fadeOut(function(){
+        $('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
             $('#waf-pers-bubble-holder').remove();
 
             userEneteredAlias();

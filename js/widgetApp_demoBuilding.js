@@ -15,7 +15,7 @@ var handleDeviceClick = isMobile ? 'touchend' : 'click';
 // pop-over functionality
 function enableFunctionality(config){
 	$('.waf-pers-bubble-close-button').on(handleDeviceClick, function(e){
-		$('#waf-pers-bubble-holder').fadeOut(function(){
+		$('#waf-pers-bubble-holder').fadeTo(500, 0, function(){
 			$('#waf-pers-bubble-holder').remove();
 		//	setCookie('adsk_abm_click','y',null);
 		});
