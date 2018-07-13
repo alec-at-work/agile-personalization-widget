@@ -46,9 +46,9 @@ function fitToSize(config) {
 	var config = config || {};
 		config.style = config.style || {};
 	var banners = $("#waf-pers-banner-text"),
-		bannerH = banners.outerHeight(true), // $(banners[0]).height()
-		bannerW = config.style.width || banners.width(), 	// banners[0].width();
-		size = bannerW + "px " + bannerH + "px",
+		bannerH = "100%", // banners.outerHeight(true), // $(banners[0]).height()
+		bannerW = ((config.style.width || banners.width()) + 20) + "px", // , 	// banners[0].width();
+		size = "100% " + bannerH,
 		sty = config.style;
 
 	/*
@@ -59,10 +59,10 @@ function fitToSize(config) {
 	console.log('Banner Img Siz = ' + size);
 	*/
 
-	$("#waf-pers-bubble-holder").css("width", bannerW + "px");
-	$("#waf-pers-bubble-banner").css("height", bannerH + "px");
-	$('#waf-pers-banner-holder').css('height', bannerH + "px");
-	$("#waf-pers-bubble-banner").css("width", bannerW + "px");
+	$("#waf-pers-bubble-holder").css("width", bannerW); // + "px");
+	$("#waf-pers-bubble-banner").css("height", bannerH); // + "px");
+	$('#waf-pers-banner-holder').css('height', bannerH); // + "px");
+	$("#waf-pers-bubble-banner").css("width", "100%"); // + "px");
 	if (config.banner.image) {
 		$("#waf-pers-bubble-banner").css("background-image", 'url("' + config.banner.image + '")');
 		$(".waf-pers-offer-block").addClass('waf-pers-blue-cta');
@@ -88,7 +88,7 @@ function fitToSize(config) {
 	$("#waf-pers-bubble-banner").css("opacity", "0.7");
 	// and the height of th eother one
 	// $("#waf-pers-bubble-banner-border").css("top", bannerH + "px");
-	$('.waf-pers-bubble-banner-border').css('top', bannerH + "px");
+	$('.waf-pers-bubble-banner-border').css('top', bannerH ); //+ "px");
 
 	// adjust the main cta button width
 		// min-width: 125px;
@@ -127,14 +127,14 @@ function fitToSize(config) {
 		// console.log('adjusting CTA height to = ' + childrenH);
 		 // console.log('arrowMargin = ' + arrowMargin);
 		 //console.log('adjustArrow = ' + adjustArrow);
-		$(ctaEl).height(childrenH + "px" );
+		$(ctaEl).height(childrenH ); //+ "px" );
 		// console.log($(ctaEl).height());
 		// console.log($(ctaEl).innerHeight());
 		// console.log($(ctaEl).outerHeight());
 		$(ctaEl).find('.abm-cta-right').css('position','absolute').css('top', (arrowMargin * 2) + 'px').css('margin-top','-' + arrowMargin + 'px');
 	});
  	// console.log("adjsting CTAs to width of: " + max + 'px');
-	$('.waf-pers-offer-block').width(max + "px");
+	$('.waf-pers-offer-block').width(max); // + "px");
 };
 
 // animate the thing onto the screen

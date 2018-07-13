@@ -7,7 +7,7 @@
     font-family: "Artifakt-abm-light";
     src: url(https://static-dc.autodesk.net/etc/designs/v201806182109/templates-general/structure/fonts/artifakt/clientlibs/fontfiles/artifakt-element-light.woff2) format("truetype");
 }
-*/
+
 @font-face{
     font-family:Artifakt;
     font-style:normal;
@@ -15,20 +15,13 @@
     src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Light.eot);
     src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Light.eot#iefix) format("embedded-opentype"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Light.woff2) format("woff2"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Light.woff) format("woff"),url(https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Light.ttf) format("truetype")
 }
-@font-face{
-    font-family:Artifakt;
-    font-style:normal;
-    font-weight:400;
-    src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Regular.eot);
-    src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Regular.eot#iefix) format("embedded-opentype"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Regular.woff2) format("woff2"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Regular.woff) format("woff"),url(https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Regular.ttf) format("truetype")
+*/
+
+@font-face {
+    font-family: "Artifakt";
+    src: url(/agile-personalization-widget/fonts/Artifakt-Element-Medium.ttf) format("truetype");
 }
-@font-face{
-    font-family:Artifakt;
-    font-style:normal;
-    font-weight:700;
-    src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot);
-    src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot#iefix) format("embedded-opentype"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Medium.woff2) format("woff2"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Medium.woff) format("woff"),url(https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Medium.ttf) format("truetype")
-}
+
 
 .abm-message-hidden {
 	display: none;
@@ -40,28 +33,27 @@
 	bottom : -3%;
 	right : 3%; 
 	width: 1px;
-	min-width : 225px;
-	font-size: 18px;
+	min-width : 20vw;
+	font-size: 1.2vw;
 	/* min-height: 215px; */
 }
 
 .waf-pers-bubble {
-	margin-top: 1px;
-	margin-bottom: 1px;
+	margin-top: 0.1vw;
+	margin-bottom: 0.1vw;
 	z-index : 888889;
 	position : relative;
 	width: 100%;
 	padding: 0px;
 	opacity : 0.95;
 	text-align: center;
-	font-size: 18px;
 	box-shadow: 2px 2px 2px #999999;
 	color : #444444;
 	/* font-size:1.2rem; */
     font-style:normal;
-    font-weight:400;
+    font-weight: 400;
     font-family:Artifakt,Arial,sans-serif!important;
-    line-height:1.4;
+    line-height: 1.4;
     overflow:hidden;
     cursor: move;
 }
@@ -74,28 +66,28 @@
 
 .special-offer-palette {
 	background-color: #E8F8FD;
-	border : 2px solid #A1A49B;
+	border : 0.1vw solid #A1A49B;
 }
 
 .subscription-benefits-palette {
 	background-color: #F5F5F5;
-	border : 2px solid #dfdee2;
+	border : 0.1vw solid #dfdee2;
 }
 .maintenance-to-subscription-palette {
 	background-color: #DDDDDD;
-	border : 2px solid #CCCCCC;
+	border : 0.1vw solid #CCCCCC;
 }
 .industry-collection-palette {
 	background-color: #F7F9F8;
-	border: 2px solid #A1A49B;
+	border: 0.1vw solid #A1A49B;
 }
 .industry-collection-palette-m_and_e {
 	background-color: #F7F9F8;
-	border: 2px solid #A1A49B;
+	border: 0.1vw solid #A1A49B;
 }
 .contact-sales-palette {
 	background-color: #FFFFFF;
-	border: 2px solid #dddddd;
+	border: 0.1vw solid #dddddd;
 }
 
 
@@ -103,20 +95,20 @@
 
 .waf-pers-message-palette-one {
 	background: linear-gradient(#fff, #eee);
-	border: 2px solid #cccccc;
+	border: 0.1vw solid #cccccc;
 }
 
 .waf-pers-message-palette-two {
 	background: linear-gradient(#fff, #eee);
-	border: 2px solid #cccccc;
+	border: 0.1vw solid #cccccc;
 }
 .waf-pers-message-palette-three {
 	background: linear-gradient(#fff, #eee);
-	border: 2px solid #cccccc;
+	border: 0.1vw solid #cccccc;
 }
 .waf-pers-message-palette-four {
 	background: linear-gradient(#fff, #eee);
-	border: 2px solid #cccccc;
+	border: 0.1vw solid #cccccc;
 }
 
 
@@ -144,14 +136,14 @@
 		opacity: 0.75;
 	}
 	#waf-pers-banner-text {
-		padding: 5px;
+		padding: 0.25vw;
 		vertical-align: middle;
 		opacity: 1.0;
 	}
 	#waf-pers-banner-text span {
 		position: relative;
 		top: 0px;
-		left: 8px;
+		left: 0.4vw;
 		vertical-align: middle;
 		font-size: 105%;
 		opacity: 1.0;
@@ -169,7 +161,7 @@
 	width: 100%;
 	margin: 0;
 	border: 0;
-    height: 1px;
+    height: 0.1vw;
     background-image: linear-gradient(to right, #FFFFFF, #CCCCCC, #666666);
 	/* background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); */
 }
@@ -180,8 +172,8 @@
 	/* max-width: 80%; */
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 4px;
-	margin-bottom: 4px;
+	margin-top: 0.2vw;
+	margin-bottom: 0.2vw;
 	padding: 0.565em 1em .5em 1em;
 }
 	.waf-pers-cta span {
@@ -196,7 +188,7 @@
 	position: relative;
 	 vertical-align: middle;
 	text-align: left;
-	padding-right: 2px;
+	padding-right: 0.1vw;
 	float: left;
 	width: 94%;
 	margin: auto;
@@ -221,14 +213,14 @@
 .waf-pers-bubble-close-button {
 	cursor: pointer;
 	/* font-family: "Artifakt-abm-light"; */
-	font-size: 70%;
+	font-size: 75%;
 	background-color: #999999;
 	border-width: 0px 1px 1px 0px;
 	border-style: solid; 
 	border-color: #CCCCCC;
 	color: #FFFFFF;
-	margin-top: 8px;
-	margin-bottom: 6px;
+	margin-top: 0.4vw;
+	margin-bottom: 0.3vw;
 	padding: 0.5em;
 }
 	.waf-pers-bubble-close-button:hover {
@@ -264,30 +256,14 @@
 .waf-pers-offer-block-secondary {
 	/* font-family: "Artifakt-abm-light"; */
 	display: block;
-	font-size: 75%;
+	font-size: 80%;
 	width: 92%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10px;
+	margin-top: 0.5vw;
 	/* margin-bottom: 5px; */
-	padding: 2px;
+	padding: 0.1vw;
 }
-
-.waf-pers-contact-block {
-	/* font-family: "Artifakt-abm-heavy"; */
-	min-width: 200px;
-	display: inline-block;
-	background-color: #0696D7;
-	border-width: 0px 1px 1px 0px;
-	border-style: solid; 
-	border-color: #CCCCCC;
-	color: #FFFFFF;
-	margin-top: 6px;
-}
-	.waf-pers-contact-block:hover {
-		background-color: #0470A1;
-	}
-
 
 
 /* Experimental generic palettes */
@@ -302,7 +278,7 @@
 	.waf-pers-generic-palette-grey
 	{
 		background: linear-gradient(#fff, #eee);
-		border: 2px solid #CCCCCC;
+		border: 0.1vw solid #CCCCCC;
 	}
 		/* Red */
 		.waf-pers-generic-palette-red-banner {
