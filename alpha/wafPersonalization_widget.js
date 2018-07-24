@@ -1,4 +1,328 @@
-(function($){
+(function wafPersonalizedMessaging($) {
+
+
+// Bubbles Style
+var css = '@font-face{font-family:Artifakt;font-style:normal;font-weight:700;src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot);src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot#iefix) format("embedded-opentype"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Medium.woff2) format("woff2"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Medium.woff) format("woff"),url(https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Medium.ttf) format("truetype")}.abm-message-hidden{display:none}#waf-pers-bubble-holder{position:fixed;z-index:888888;bottom:-3%;right:3%;width:1px;min-width:20vw;max-width:45vw;font-size:1.2vw}.waf-pers-bubble{margin-top:.1vw;margin-bottom:.1vw;z-index:888889;position:relative;width:100%;padding:0;opacity:.95;text-align:center;box-shadow:2px 2px 2px #999;color:#444;font-style:normal;font-weight:400;font-family:Artifakt,Arial,sans-serif!important;line-height:1.4;overflow:hidden;cursor:move}.waf-pers-bubble a{text-decoration:none}.special-offer-palette{background-color:#E8F8FD;border:.1vw solid #A1A49B}.subscription-benefits-palette{background-color:#F5F5F5;border:.1vw solid #dfdee2}.maintenance-to-subscription-palette{background-color:#DDD;border:.1vw solid #CCC}.industry-collection-palette{background-color:#F7F9F8;border:.1vw solid #A1A49B}.industry-collection-palette-m_and_e{background-color:#F7F9F8;border:.1vw solid #A1A49B}.contact-sales-palette{background-color:#FFF;border:.1vw solid #ddd}.waf-pers-message-palette-one{background:linear-gradient(#fff,#eee);border:.1vw solid #ccc}.waf-pers-message-palette-two{background:linear-gradient(#fff,#eee);border:.1vw solid #ccc}.waf-pers-message-palette-three{background:linear-gradient(#fff,#eee);border:.1vw solid #ccc}.waf-pers-message-palette-four{background:linear-gradient(#fff,#eee);border:.1vw solid #ccc}#waf-pers-banner-holder{position:relative;width:100%;height:100%;margin-left:auto;margin-right:auto;margin-bottom:0;text-align:left}#waf-pers-bubble-banner{position:absolute;width:100%;margin-left:auto;margin-right:auto;margin-bottom:0;text-align:left;background-color:#ccc;opacity:.75}#waf-pers-banner-text{padding:.25vw;vertical-align:middle;opacity:1}#waf-pers-banner-text span{position:relative;top:0;left:.4vw;vertical-align:middle;font-size:105%;opacity:1}.waf-pers-bubble hr{display:block;margin:0;padding:0}.waf-pers-bubble-banner-border{position:absolute;top:0;width:100%;margin:0;border:0;height:.1vw;background-image:linear-gradient(to right,#FFF,#CCC,#666)}.waf-pers-cta{position:relative;display:inline-block;padding:.565em 1em .5em;margin:.2vw auto}.waf-pers-cta span{display:inline-block;line-height:auto;vertical-align:middle}.abm-cta-left{display:inline-block;position:relative;vertical-align:middle;text-align:left;padding-right:.1vw;float:left;width:94%;margin:auto}.abm-cta-right{display:inline-block;position:relative;vertical-align:middle;float:right;text-align:right;width:5%;margin:auto}.waf-pers-icon-arrow-button{content:"\e615"}.abm-clickable{cursor:pointer}.waf-pers-bubble-close-button{cursor:pointer;font-size:75%;background-color:#999;border-width:0 1px 1px 0;border-style:solid;border-color:#CCC;color:#FFF;margin-top:.4vw;margin-bottom:.3vw;padding:.5em}.waf-pers-bubble-close-button:hover{background-color:#666}.waf-pers-offer-companyname{font-weight:700;display:block;font-size:80%;width:90%;padding:3px;margin:4px auto}.waf-pers-offer-block{display:block;border-width:0 1px 1px 0;border-style:solid;border-color:#CCC;color:#FFF;width:auto;max-width:70%;margin-top:10px}.waf-pers-offer-block-secondary{display:block;font-size:80%;width:92%;margin-left:auto;margin-right:auto;margin-top:.5vw;padding:.1vw}.waf-pers-generic-palette-orange,.waf-pers-generic-palette-red,.waf-pers-generic-palette-blue,.waf-pers-generic-palette-dark-blue,.waf-pers-generic-palette-green,.waf-pers-generic-palette-teal,.waf-pers-generic-palette-grey{background:linear-gradient(#fff,#eee);border:.1vw solid #CCC}.waf-pers-generic-palette-red-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(228,78,78,1) 100%)}.waf-pers-generic-palette-orange-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(251,181,73,1) 100%)}.waf-pers-generic-palette-blue-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(56,171,223,1) 100%)}.waf-pers-generic-palette-dark-blue-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(70,121,185,1) 100%)}.waf-pers-generic-palette-green-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(159,201,102,1) 100%)}.waf-pers-generic-palette-teal-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(91,201,189,1) 100%)}.waf-pers-generic-palette-grey-banner{background:#fff;background:linear-gradient(125deg,rgba(255,255,255,1) 15%,rgba(242,242,242,1) 35%,rgba(153,153,153,1) 100%)}.waf-pers-blue-cta{background-color:#0696D7}.waf-pers-blue-cta:hover{background-color:#0470A1}.waf-pers-dark-blue-cta{background-color:#1858A8}.waf-pers-dark-blue-cta:hover{background-color:#12427E}.waf-pers-red-cta{background-color:#D22}.waf-pers-red-cta:hover{background-color:#A61919}.waf-pers-orange-cta{background-color:#FAA21B}.waf-pers-orange-cta:hover{background-color:#BB7914}.waf-pers-teal-cta{background-color:#32BCAD}.waf-pers-teal-cta:hover{background-color:#258D82}.waf-pers-green-cta{background-color:#87BC40}.waf-pers-green-cta:hover{background-color:#658D30}.waf-pers-grey-cta{background-color:#666}.waf-pers-grey-cta:hover{background-color:#444}',
+    head = document.head || document.getElementsByTagName('head')[0] || document.body || document.getElementsByTagName('body')[0],
+    style = document.createElement('style');
+
+/* MAKE SURE TO HAVE THE RIGHT ARTIFAKT RESOURCE ON THIS ONE */
+
+style.type = 'text/css';
+if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+} else {
+    style.appendChild(document.createTextNode(css));
+}
+
+head.appendChild(style);
+
+// WAF Personalization Message configuration...
+
+// WAF Personalization Message configuration...
+window.adskWafPersonalizeConfig = {
+	
+	// BIM English
+	'test-fomt-bim-construction-en' : {
+		style : {
+			palette : "waf-pers-message-palette-two"
+			// ,width: 325
+		},
+		banner : {
+		    text : 'The Future of Construction' 
+		},
+		primaryMessage : {
+			link : "https://www.autodesk.com/future-of-making-things",
+		    text : "The future of <b>Construction</b> is here. Get the right knowledge and tools to capture the opportunity."
+		},
+		primaryCta : {
+		    link : "https://www.autodesk.com/solutions/bim",
+		    text : "Learn about BIM"
+		},
+		secondaryMessage : {
+		    link : "https://www.autodesk.com/solutions/bim/construction-management-software",
+		    text : "Learn all about how BIM empowers <b>Construction</b> all over the world."
+		},
+    	closeText : "Close"
+	},
+
+	// BIM in Japenese
+	'test-fomt-bim-construction-jp' : {
+		style : {
+			palette : "waf-pers-message-palette-two"
+			// ,width: 325
+		},
+		banner : {
+		    text : '建設の未来'
+		},
+		primaryMessage : {
+			link : "https://www.autodesk.com/future-of-making-things",
+		    text : "<b>建設</ b>の将来はここにあります。機会を捉えるための適切な知識とツールを入手してください。"
+		},
+		primaryCta : {
+		    link : "https://www.autodesk.com/solutions/bim",
+		    text : "BIMの詳細"
+		},
+		secondaryMessage : {
+		    link : "https://www.autodesk.com/solutions/bim/construction-management-software",
+		    text : "世界中のBIMがどのように<b>建設</ b>に貢献しているかを学びましょう。"
+		},
+		closeText : "閉じる"
+	},
+
+	// Special Offer
+	'special-offer' : {
+        style : {
+	       	palette : "waf-pers-message-palette-two"
+	       	// ,width: 300
+	    },
+	    banner : {
+		    text : 'Save up to 15% on <b>Subscription</b>'
+		},
+        primaryCta : {
+            link : "https://www.autodesk.com/promotions",
+            text : "Learn more"
+        },
+        secondaryMessage : {
+            link : "https://knowledge.autodesk.com/support/autocad/learn-explore/caas/sfdcarticles/sfdcarticles/What-are-the-main-benefits-of-Autodesk-subscription.html",
+            text : "What are the <b>main benefits</b> of an Autodesk Subscription?"
+        }
+	},
+
+	// Subscription
+	'subscription-benefits' : {
+		style : {
+	       	palette : "waf-pers-message-palette-two"
+	       	// ,width: 260
+	    },
+	    banner : {
+		    text : 'Autodesk <b>Subscription</b>'
+		},
+		primaryMessage : {
+			link : false,
+            text : "Get the most value out of our Products by subscribing today."
+		},
+	    primaryCta : {
+	        link : "https://www.autodesk.com/subscription",
+	        text : "Learn more"
+	    },
+	    secondaryMessage : {
+	        link : "https://knowledge.autodesk.com/support/autocad/learn-explore/caas/sfdcarticles/sfdcarticles/What-are-the-main-benefits-of-Autodesk-subscription.html",
+	        text : "What are the <b>main benefits</b> of an Autodesk Subscription?"
+	    },
+	    closeText : "Close"
+	},
+
+	// Maintenance to Subscription
+	'maintenance-to-subscription' : {
+        style : {
+            palette : "waf-pers-message-palette-three"
+            // ,width: 320
+        },
+		banner : {
+		    text : 'Get more value with <b>Subscription</b>'
+		},
+        primaryCta : {
+            link : "https://www.autodesk.com/campaigns/maintenance-to-subscription",
+            text : "Move to Subscription"
+        },
+        secondaryMessage : {
+            link : "https://knowledge.autodesk.com/support/autocad/learn-explore/caas/sfdcarticles/sfdcarticles/What-are-the-main-benefits-of-Autodesk-subscription.html",
+            text : "What are the <b>main benefits</b> of an Autodesk Subscription?"
+        }
+    },
+
+    // Industry Collections
+    'industry-collection-m_and_e' : {
+        style : {
+            palette : "waf-pers-generic-palette-teal"
+            // ,width: 300
+        },
+		banner : {
+		    text : '<b>Media & Entertainment</b><br />Collection'
+		},
+        primaryCta : {
+            link : "https://www.autodesk.com/collections/media-entertainment/overview",
+            text : "Explore the Collection"
+        },
+        secondaryMessage : {
+            link : "https://www.autodesk.com/collections/media-entertainment/included-software",
+            text : "What software is included in the <b>Media & Entertainment Collection</b>?"
+        }
+    },
+    'industry-collection-pd_and_m' : {
+        style : {
+            palette : "waf-pers-generic-palette-orange"
+            // ,width: 360
+        },
+		banner : {
+		    text : '<b>Product Design & Manfuacturing</b><br />Collection'
+		},
+        primaryCta : {
+            link : "https://www.autodesk.com/collections/product-design-manufacturing/overview",
+            text : "Explore the Collection"
+        },
+        secondaryMessage : {
+            link : "https://www.autodesk.com/collections/product-design-manufacturing/included-software",
+            text : "What software is included in the <b>Media & Entertainment Collection</b>?"
+        }
+    },
+    'industry-collection-aec' : {
+        style : {
+            palette : "waf-pers-generic-palette-dark-blue"
+	         // ,width: 400
+        },
+		banner : {
+		    text : '<b>Architecture, Engineering & Construction</b><br />Collection'
+		},
+        primaryCta : {
+            link : "https://www.autodesk.com/collections/architecture-engineering-construction/overview",
+            text : "Explore the Collection"
+        },
+        secondaryMessage : {
+            link : "https://www.autodesk.com/collections/architecture-engineering-construction/included-software",
+            text : "What software is included in the <b>Media & Entertainment Collection</b>?"
+        }
+    },
+
+	// PURE demo one
+    'alec-demo-1' : {
+		style : {
+			palette : "waf-pers-message-palette-four"
+			// ,width: 275
+		},
+		banner : {
+		    // image : "https://alec-at-work.github.io/tealium-dev/brand_banner_1.jpg",
+		    text : 'Autodesk <b>Subscription</b>'
+		},
+		primaryMessage : {
+			link : false,
+		    text : "Get the most value by switching to subscription today."
+		},
+		primaryCta : {
+		    link : "https://www.autodesk.com/subscription",
+		    text : "Learn more"
+		},
+		secondaryCta : {
+		    link : "https://www.autodesk.com/subscription",
+		    text : "LOTS of stuff HERE and HERE and HERE and HERE and HERE"
+		},
+		secondaryMessage : {
+		    link : "https://knowledge.autodesk.com/support/autocad/learn-explore/caas/sfdcarticles/sfdcarticles/What-are-the-main-benefits-of-Autodesk-subscription.html",
+		    text : "What are the <b>main benefits</b> of an Autodesk Subscription"
+		}
+	},
+
+	// Random version
+	'alec-demo-2' : {
+		style : {
+			palette : "waf-pers-message-palette-three"
+			// ,width: 420
+		},
+		banner : {
+		    // image : "https://alec-at-work.github.io/tealium-dev/brand_banner_1.jpg",
+		    text : 'Autodesk <b>Subscription</b>'
+		},
+		primaryMessage : {
+			link : false,
+		    text : "Try one out today"
+		},
+		primaryCta : {
+		    link : "https://www.autodesk.com/",
+		    text : "SUBSCRIBE"
+		},
+		secondaryMessage : {
+		    link : "https://www.autodesk.com/",
+		    text : "Compare products here or something!"
+		},
+		secondaryCta : {
+		    link : "https://www.autodesk.com/",
+		    text : "More stuff here here here here <b>and HERE</b>Here is yet more stuff!"
+		}
+	}
+
+	,// Random version
+	'red-test' : {
+		style : {
+			palette : "waf-pers-generic-palette-red"
+			// ,width: 420
+		},
+		banner : {
+		    // image : "https://alec-at-work.github.io/tealium-dev/brand_banner_1.jpg",
+		    text : 'Autodesk <b>Subscription</b>'
+		},
+		primaryMessage : {
+			link : false,
+		    text : "Try one out today"
+		},
+		primaryCta : {
+		    link : "https://www.autodesk.com/",
+		    text : "SUBSCRIBE"
+		},
+		secondaryMessage : {
+		    link : "https://www.autodesk.com/",
+		    text : "Compare products here or something!"
+		},
+		secondaryCta : {
+		    link : "https://www.autodesk.com/",
+		    text : "More stuff here here here here <b>and HERE</b>Here is yet more stuff!"
+		}
+	}
+
+	,// Random version
+	'color-test' : {
+		style : {
+			palette : "waf-pers-generic-palette-grey"
+			// ,width: 300
+		},
+		banner : {
+		    text : 'Save up to 15% on <b>Subscription</b>'
+		},
+        primaryCta : {
+            link : "https://www.autodesk.com/promotions",
+            text : "Learn more"
+        },
+        secondaryMessage : {
+            link : "https://knowledge.autodesk.com/support/autocad/learn-explore/caas/sfdcarticles/sfdcarticles/What-are-the-main-benefits-of-Autodesk-subscription.html",
+            text : "What are the <b>main benefits</b> of an Autodesk Subscription?"
+        }
+	}
+
+	,// no text set yet version
+	'generic' : {
+		style : {
+			palette : "waf-pers-generic-palette-grey"
+			// ,width: 300
+		},
+		banner : {
+		    text : 'Banner text here'
+		},
+		primaryMessage : {
+            link : false,
+            text : " [primary message] "
+        },
+        primaryCta : {
+            link : false,
+            text : " [cta #1] "
+        },
+        secondaryMessage : {
+            link : false,
+            text : " [secondary message] "
+        },
+        secondaryCta : {
+            link : false,
+            text : " [cta #2] "
+        },
+        closeText : " [close] "
+	}
+};
+
+
+
+/****************
+START --- BUBBLE.js Insert 
+********************/
+    
 
 /* Cookie Methods */
 // function checkCookie(n){for(var t=n+"=",e=document.cookie.split(";"),r=0;r<e.length;r++){for(var i=e[r];" "===i.charAt(0);)i=i.substring(1,i.length);if(0===i.indexOf(t))return i.substring(t.length,i.length)}return!1};
@@ -261,16 +585,16 @@ function getBannerImg(palette) {
 	// console.log('getting palette for : ' + paletteNum);
 	switch (paletteNum) {
 		case 'one' :
-			return '/agile-personalization-widget/imgs/brand_banner_1.jpg';
+			return 'https://alec-at-work.github.io/agile-personalization-widget/imgs/brand_banner_1.jpg';
 			break;
 		case 'two' :
-			return '/agile-personalization-widget/imgs/brand_banner_2.jpg';
+			return 'https://alec-at-work.github.io/agile-personalization-widget/imgs/brand_banner_2.jpg';
 			break;
 		case 'three' :
-			return '/agile-personalization-widget/imgs/brand_banner_3.jpg';
+			return 'https://alec-at-work.github.io/agile-personalization-widget/imgs/brand_banner_3.jpg';
 			break;
 		case 'four' :
-			return '/agile-personalization-widget/imgs/brand_banner_4.jpg';
+			return 'https://alec-at-work.github.io/agile-personalization-widget/imgs/brand_banner_4.jpg';
 			break;
 		default :
 			return false;
@@ -379,20 +703,21 @@ window.adskWafPersonalizeMsg = function(userVar, userSegment, config) {
 		} catch(err) {
 			console.warn("WAF Personalization Widget Build ERROR: " + err.message);	
 			// track errors
-			gtag('event', 'Widget Build Error', {
-              'event_category': 'Errors',
-              'event_label' : err.message
-            }); 
+			
+			console.warn('add error tracking here for WAF');
 		}
 		
 	} else {
 		console.warn("WAF Personalization CONFIG Missing, will not build messaging");
 		// track errors
-		gtag('event', 'Invalid Config Used', {
-          'event_category': 'Errors',
-          'event_label' : JSON.stringify(config)
-        }); 
+		
+		console.warn('add error tracking here for WAF');
 	}
 };
 
-})(window.$widget);
+	/*********
+		END DEMO CODE
+	*********/
+
+
+})(window.$waf || window.jQuery);

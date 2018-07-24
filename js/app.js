@@ -499,7 +499,6 @@ function replacer(key, value) {
 
 // apply the CUSTOM JSON to the placeholder:
 var jsonPlaceholder = JSON.stringify({
-    personalize : false,
     style : {
         palette : "waf-pers-generic-palette-red",
         width: 300
@@ -524,9 +523,10 @@ var jsonPlaceholder = JSON.stringify({
         text : " [cta #2] "
     },
     closeText : " [close] ",
+    personalize : false,
     personalizations : {
-        banner : " Custom text replaces ##marketingAlias## with the Marketing Alias",
-        secondaryMessage : "Custom text replaces ##marketingAlias## with the Marketing Alias",
+        banner : "Replaces ##marketingAlias## with the Marketing Alias",
+        secondaryMessage : "Replaces ##marketingAlias## with the Marketing Alias",
         logo : false
     }
 // }, null, 4);

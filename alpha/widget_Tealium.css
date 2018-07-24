@@ -1,0 +1,354 @@
+
+@font-face{
+    font-family:Artifakt;
+    font-style:normal;
+    font-weight:700;
+    src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot);
+    src:url(https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot#iefix) format("embedded-opentype"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Medium.woff2) format("woff2"),url(https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Medium.woff) format("woff"),url(https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Medium.ttf) format("truetype")
+}
+
+
+.abm-message-hidden {
+    display: none;
+}
+
+#waf-pers-bubble-holder {
+    position: fixed;
+    z-index : 888888;
+    bottom : -3%;
+    right : 3%; 
+    width: 1px;
+    min-width : 20vw;
+    max-width: 45vw;
+    font-size: 1.2vw; 
+    /* font-size: inherit; */
+    /* min-height: 215px; */
+}
+
+.waf-pers-bubble {
+    margin-top: 0.1vw;
+    margin-bottom: 0.1vw;
+    z-index : 888889;
+    position : relative;
+    width: 100%;
+    padding: 0px;
+    opacity : 0.95;
+    text-align: center;
+    box-shadow: 2px 2px 2px #999999;
+    color : #444444;
+    /* font-size:1.2rem; */
+    font-style:normal;
+    font-weight: 400;
+    font-family:Artifakt,Arial,sans-serif!important;
+    line-height: 1.4;
+    overflow:hidden;
+    cursor: move;
+}
+
+.waf-pers-bubble a {
+    text-decoration: none;
+}
+
+/* palettes for the Pop Over */
+
+.special-offer-palette {
+    background-color: #E8F8FD;
+    border : 0.1vw solid #A1A49B;
+}
+
+.subscription-benefits-palette {
+    background-color: #F5F5F5;
+    border : 0.1vw solid #dfdee2;
+}
+.maintenance-to-subscription-palette {
+    background-color: #DDDDDD;
+    border : 0.1vw solid #CCCCCC;
+}
+.industry-collection-palette {
+    background-color: #F7F9F8;
+    border: 0.1vw solid #A1A49B;
+}
+.industry-collection-palette-m_and_e {
+    background-color: #F7F9F8;
+    border: 0.1vw solid #A1A49B;
+}
+.contact-sales-palette {
+    background-color: #FFFFFF;
+    border: 0.1vw solid #dddddd;
+}
+
+
+/* NEW / REAL VERSION ONES */
+
+.waf-pers-message-palette-one {
+    background: linear-gradient(#fff, #eee);
+    border: 0.1vw solid #cccccc;
+}
+
+.waf-pers-message-palette-two {
+    background: linear-gradient(#fff, #eee);
+    border: 0.1vw solid #cccccc;
+}
+.waf-pers-message-palette-three {
+    background: linear-gradient(#fff, #eee);
+    border: 0.1vw solid #cccccc;
+}
+.waf-pers-message-palette-four {
+    background: linear-gradient(#fff, #eee);
+    border: 0.1vw solid #cccccc;
+}
+
+
+#waf-pers-banner-holder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+    #waf-pers-bubble-banner {
+        position: absolute;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* height: 1px; */
+        margin-bottom: 0px;
+        text-align: left;
+        /* background-image: url("https://alec-at-work.github.io/tealium-dev/brand_banner_1_scale.jpg?newnew");
+        background-size: 300px 60px; */
+        background-color: #cccccc;
+        opacity: 0.75;
+    }
+    #waf-pers-banner-text {
+        padding: 0.25vw;
+        vertical-align: middle;
+        opacity: 1.0;
+    }
+    #waf-pers-banner-text span {
+        position: relative;
+        top: 0px;
+        left: 0.4vw;
+        vertical-align: middle;
+        font-size: 105%;
+        opacity: 1.0;
+    }
+
+.waf-pers-bubble hr {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.waf-pers-bubble-banner-border {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    height: 0.1vw;
+    background-image: linear-gradient(to right, #FFFFFF, #CCCCCC, #666666);
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); */
+}
+
+.waf-pers-cta {
+    position: relative;
+    display: inline-block;
+    /* max-width: 80%; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2vw;
+    margin-bottom: 0.2vw;
+    padding: 0.565em 1em .5em 1em;
+}
+    .waf-pers-cta span {
+        display: inline-block;
+        line-height: auto;
+        vertical-align: middle;
+        /*  padding: 1px 2px 1px 2px;*/
+    }
+
+.abm-cta-left {
+    display: inline-block;
+    position: relative;
+     vertical-align: middle;
+    text-align: left;
+    padding-right: 0.1vw;
+    float: left;
+    width: 94%;
+    margin: auto;
+}
+.abm-cta-right {
+    display: inline-block;
+    position: relative;
+        vertical-align: middle;
+    float: right;
+    text-align: right;
+    width: 5%;
+    margin: auto;
+}
+    .waf-pers-icon-arrow-button {
+        content:"\e615"
+    }
+
+.abm-clickable {
+    cursor: pointer;
+}
+
+.waf-pers-bubble-close-button {
+    cursor: pointer;
+    /* font-family: "Artifakt-abm-light"; */
+    font-size: 75%;
+    background-color: #999999;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid; 
+    border-color: #CCCCCC;
+    color: #FFFFFF;
+    margin-top: 0.4vw;
+    margin-bottom: 0.3vw;
+    padding: 0.5em;
+}
+    .waf-pers-bubble-close-button:hover {
+        background-color: #666666;
+    }
+
+.waf-pers-offer-companyname {
+    /* font-family: "Artifakt-abm-heavy"; */
+    font-weight: bold;
+    display: block;
+    font-size: 80%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 3px;
+}
+.waf-pers-offer-block {
+    /* font-family: "Artifakt-abm-heavy"; */
+    display: block;
+    /* background-color: #FFFFFF;   #0696D7; */
+    border-width: 0px 1px 1px 0px;
+    border-style: solid; 
+    border-color: #CCCCCC;
+    color: #FFFFFF;
+    width: auto;
+    max-width: 70%;
+    margin-top: 10px;
+    /* margin-bottom: 5px; */
+}
+    
+.waf-pers-offer-block-secondary {
+    /* font-family: "Artifakt-abm-light"; */
+    display: block;
+    font-size: 80%;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5vw;
+    /* margin-bottom: 5px; */
+    padding: 0.1vw;
+}
+
+
+/* Experimental generic palettes */
+
+    /* Backgrounds */
+    .waf-pers-generic-palette-orange,
+    .waf-pers-generic-palette-red,
+    .waf-pers-generic-palette-blue,
+    .waf-pers-generic-palette-dark-blue,
+    .waf-pers-generic-palette-green,
+    .waf-pers-generic-palette-teal,
+    .waf-pers-generic-palette-grey
+    {
+        background: linear-gradient(#fff, #eee);
+        border: 0.1vw solid #CCCCCC;
+    }
+        /* Red */
+        .waf-pers-generic-palette-red-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(228,78,78,1) 100%);
+        }   
+
+        /* Orange */
+        .waf-pers-generic-palette-orange-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(251,181,73,1) 100%);
+        }
+        /* Blue */
+        .waf-pers-generic-palette-blue-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(56,171,223,1) 100%);
+        }
+
+        /* Dark Blue */
+        .waf-pers-generic-palette-dark-blue-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(70,121,185,1) 100%);
+        }
+
+        /* Green */ 
+        .waf-pers-generic-palette-green-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(159,201,102,1) 100%);
+        }
+
+        /* Teal */
+        .waf-pers-generic-palette-teal-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(91,201,189,1) 100%);
+        }
+
+        /* Grey */
+        .waf-pers-generic-palette-grey-banner {
+            background: rgb(255,255,255);
+            background: linear-gradient(125deg, rgba(255,255,255,1) 15%, rgba(242,242,242,1) 35%, rgba(153,153,153,1) 100%);
+        }
+
+
+    /* for CTA coloring */
+    .waf-pers-blue-cta {
+        background-color: #0696D7;
+    }
+        .waf-pers-blue-cta:hover {
+            background-color: #0470A1;
+        }
+    .waf-pers-dark-blue-cta {
+        background-color: #1858A8;
+    }
+        .waf-pers-dark-blue-cta:hover {
+            background-color: #12427E;
+        }
+    .waf-pers-red-cta {
+        background-color: #DD2222;
+    }
+        .waf-pers-red-cta:hover {
+            background-color: #A61919;
+        }
+    .waf-pers-orange-cta {
+        background-color: #FAA21B;
+    }
+        .waf-pers-orange-cta:hover {
+            background-color: #BB7914;
+        }
+    .waf-pers-teal-cta {
+        background-color: #32BCAD;
+    }
+        .waf-pers-teal-cta:hover {
+            background-color: #258D82;
+        }
+    .waf-pers-green-cta {
+        background-color: #87BC40;
+    }
+        .waf-pers-green-cta:hover {
+            background-color: #658D30;
+        }
+    .waf-pers-grey-cta {
+        background-color: #666666;
+    }
+        .waf-pers-grey-cta:hover {
+            background-color: #444444;
+        }

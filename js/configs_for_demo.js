@@ -5,8 +5,8 @@ window.adskWafPersonalizeConfig = {
 	// BIM English
 	'test-fomt-bim-construction-en' : {
 		style : {
-			palette : "waf-pers-message-palette-two",
-			width: 325
+			palette : "waf-pers-message-palette-two"
+			// ,width: 325
 		},
 		banner : {
 		    text : 'The Future of Construction' 
@@ -29,8 +29,8 @@ window.adskWafPersonalizeConfig = {
 	// BIM in Japenese
 	'test-fomt-bim-construction-jp' : {
 		style : {
-			palette : "waf-pers-message-palette-two",
-			width: 325
+			palette : "waf-pers-message-palette-two"
+			// ,width: 325
 		},
 		banner : {
 		    text : '建設の未来'
@@ -53,8 +53,8 @@ window.adskWafPersonalizeConfig = {
 	// Special Offer
 	'special-offer' : {
         style : {
-	       	palette : "waf-pers-message-palette-two",
-			width: 300
+	       	palette : "waf-pers-message-palette-two"
+	       	// ,width: 300
 	    },
 	    banner : {
 		    text : 'Save up to 15% on <b>Subscription</b>'
@@ -72,8 +72,8 @@ window.adskWafPersonalizeConfig = {
 	// Subscription
 	'subscription-benefits' : {
 		style : {
-	       	palette : "waf-pers-message-palette-two",
-			width: 260
+	       	palette : "waf-pers-message-palette-two"
+	       	// ,width: 260
 	    },
 	    banner : {
 		    text : 'Autodesk <b>Subscription</b>'
@@ -96,8 +96,8 @@ window.adskWafPersonalizeConfig = {
 	// Maintenance to Subscription
 	'maintenance-to-subscription' : {
         style : {
-            palette : "waf-pers-message-palette-three",
-			width: 320
+            palette : "waf-pers-message-palette-three"
+            // ,width: 320
         },
 		banner : {
 		    text : 'Get more value with <b>Subscription</b>'
@@ -115,8 +115,8 @@ window.adskWafPersonalizeConfig = {
     // Industry Collections
     'industry-collection-m_and_e' : {
         style : {
-            palette : "waf-pers-generic-palette-teal",
-			width: 300
+            palette : "waf-pers-generic-palette-teal"
+            // ,width: 300
         },
 		banner : {
 		    text : '<b>Media & Entertainment</b><br />Collection'
@@ -132,8 +132,8 @@ window.adskWafPersonalizeConfig = {
     },
     'industry-collection-pd_and_m' : {
         style : {
-            palette : "waf-pers-generic-palette-orange",
-			width: 360
+            palette : "waf-pers-generic-palette-orange"
+            // ,width: 360
         },
 		banner : {
 		    text : '<b>Product Design & Manfuacturing</b><br />Collection'
@@ -149,8 +149,8 @@ window.adskWafPersonalizeConfig = {
     },
     'industry-collection-aec' : {
         style : {
-            palette : "waf-pers-generic-palette-dark-blue",
-			width: 400
+            palette : "waf-pers-generic-palette-dark-blue"
+	         // ,width: 400
         },
 		banner : {
 		    text : '<b>Architecture, Engineering & Construction</b><br />Collection'
@@ -168,8 +168,8 @@ window.adskWafPersonalizeConfig = {
 	// PURE demo one
     'alec-demo-1' : {
 		style : {
-			palette : "waf-pers-message-palette-four",
-			width: 275
+			palette : "waf-pers-message-palette-four"
+			// ,width: 275
 		},
 		banner : {
 		    // image : "https://alec-at-work.github.io/tealium-dev/brand_banner_1.jpg",
@@ -196,8 +196,8 @@ window.adskWafPersonalizeConfig = {
 	// Random version
 	'alec-demo-2' : {
 		style : {
-			palette : "waf-pers-message-palette-three",
-			width: 420
+			palette : "waf-pers-message-palette-three"
+			// ,width: 420
 		},
 		banner : {
 		    // image : "https://alec-at-work.github.io/tealium-dev/brand_banner_1.jpg",
@@ -224,8 +224,8 @@ window.adskWafPersonalizeConfig = {
 	,// Random version
 	'red-test' : {
 		style : {
-			palette : "waf-pers-generic-palette-red",
-			width: 420
+			palette : "waf-pers-generic-palette-red"
+			// ,width: 420
 		},
 		banner : {
 		    // image : "https://alec-at-work.github.io/tealium-dev/brand_banner_1.jpg",
@@ -252,8 +252,8 @@ window.adskWafPersonalizeConfig = {
 	,// Random version
 	'color-test' : {
 		style : {
-			palette : "waf-pers-generic-palette-grey",
-			width: 300
+			palette : "waf-pers-generic-palette-grey"
+			// ,width: 300
 		},
 		banner : {
 		    text : 'Save up to 15% on <b>Subscription</b>'
@@ -271,8 +271,8 @@ window.adskWafPersonalizeConfig = {
 	,// no text set yet version
 	'generic' : {
 		style : {
-			palette : "waf-pers-generic-palette-grey",
-			width: 300
+			palette : "waf-pers-generic-palette-grey"
+			// ,width: 300
 		},
 		banner : {
 		    text : 'Banner text here'

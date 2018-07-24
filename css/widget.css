@@ -34,7 +34,9 @@
 	right : 3%; 
 	width: 1px;
 	min-width : 20vw;
-	font-size: 1.2vw;
+	max-width: 45vw;
+	font-size: 1.2vw; 
+	/* font-size: inherit; */
 	/* min-height: 215px; */
 }
 
