@@ -7,10 +7,13 @@ window.adskAbm.app = window.adskAbm.app || {};
 window.utag_data = window.utag_data || {}; 
 window.adskGdpr = window.adskGdpr || {};
 
-window.utag = window.utag || {};
-window.utag.globals = window.utag.globals || {};
-window.utag.globals.dle = window.utag.globals.dle || {};
-window.utag.globals.dle.enrichments = window.utag.globals.dle.enrichments || {};
+// window.utag = window.utag || {};
+
+if (typeof window.utag !== "undefined") {
+    window.utag.globals = window.utag.globals || {};
+    window.utag.globals.dle = window.utag.globals.dle || {};
+    window.utag.globals.dle.enrichments = window.utag.globals.dle.enrichments || {};    
+}
 
 /**** URL CONFIGS 
     detect some URL parameter Configs...
