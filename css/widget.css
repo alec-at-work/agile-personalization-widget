@@ -33,12 +33,58 @@
 	bottom : -3%;
 	right : 3%; 
 	width: 1px;
-	min-width : 20vw;
-	max-width: 45vw;
-	font-size: 1.2vw; 
+	/* font-size: 1.2vw; */
 	/* font-size: inherit; */
 	/* min-height: 215px; */
 }
+
+	/* MOBILE Screens */
+    @media only screen {
+        #waf-pers-bubble-holder { 
+        	font-size: 18px; 
+        	min-width : 30vw;
+			max-width: 50vw;
+        }
+        #logo-holder b {
+        	color: red;
+        }
+    } 
+
+    /* Medium Screens */
+    @media only screen and (min-width: 40.063em) and (max-width: 64em)  and (orientation:landscape) { 
+      	#waf-pers-bubble-holder { 
+      		font-size: 18px; 
+      		min-width : 25vw;
+			max-width: 45vw;
+      	}  
+      	#logo-holder b {
+        	color: blue;
+        }
+    } 
+     
+    /* Large Screens */
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) { 
+        #waf-pers-bubble-holder { 
+        	font-size: 16px; 
+        	min-width : 300px;
+			max-width: 500px;
+        }
+        #logo-holder b {
+        	color: green;
+        }
+    }
+     
+    /* EXTRA Large Screens */     
+    @media only screen and (min-width: 90.063em) { 
+       #waf-pers-bubble-holder { 
+       		font-size: 28px; 
+       		min-width : 500px;
+			max-width: 800px;
+       	}
+       	#logo-holder b {
+        	color: yellow;
+        }
+    }
 
 .waf-pers-bubble {
 	margin-top: 0.1vw;

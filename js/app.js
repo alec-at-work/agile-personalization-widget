@@ -500,8 +500,8 @@ function replacer(key, value) {
 // apply the CUSTOM JSON to the placeholder:
 var jsonPlaceholder = JSON.stringify({
     style : {
-        palette : "waf-pers-generic-palette-red",
-        width: 300
+        palette : "waf-pers-generic-palette-red"
+        // ,width: 300
     },
     banner : {
         text : 'Banner text here'
